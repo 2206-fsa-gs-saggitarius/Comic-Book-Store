@@ -15,6 +15,20 @@ class Cart extends Component {
   render() {
     let cart = this.props.cart || {};
     console.log(this.props);
+
+    function cartTotal(array) {
+      let total = 0;
+      for (let item of array) {
+        total += item;
+      }
+      return total;
+    }
+    function priceDisplay(price) {
+      const cents = String(price).slice(String(price).length - 2);
+      const dollars = String(price).slice(0, String(price).length - 2);
+      return `${dollars}.${cents}`;
+    }
+
     return (
       <div>
         {cart.items && cart.items.length > 0 ? (
@@ -66,20 +80,20 @@ class Cart extends Component {
                   Remove
                 </button>
                 <h1>
-                  {/*  Subtotal: ${displayPrice(item.price * item.cart.quantity)*/}
+                  Subtotal: ${priceDisplay(item.price * item.cart.quantity)}
                 </h1>
               </div>
             ))}
             <div>
               <h1 id="total-cost">
                 Total: $
-                {/* displayPrice(
-                //   totalCost(
-                //     this.props.cart.products.map(
-                //       (item) => item.price * item.cart.quantity
-                //     )
-                //   )
-                // )*/}
+                {priceDisplay(
+                  cartTotal(
+                    this.props.cart.products.map(
+                      (item) => item.price * item.cart.quantity
+                    )
+                  )
+                )}
               </h1>
             </div>
           </div>
