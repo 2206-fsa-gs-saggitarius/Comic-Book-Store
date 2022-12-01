@@ -58,7 +58,7 @@ To run the project on your local machine, follow the steps below
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+List of things you need to use, the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -71,11 +71,11 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/2206-fsa-gs-saggitarius/Comic-Book-Store.git
    ```
-2. Install NPM packages
+2. Install dependencies/NPM packages
    ```sh
    npm install
    ```
-3. Start on node server
+3. Start server
    ```sh
    npm start
    ```
